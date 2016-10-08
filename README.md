@@ -11,5 +11,4 @@ Eremenko [nastyaeremenko] Anastasiya
 
 Gordeeva [admoni] Nadejda
 
-Sorokina [liliururu] Liliya
-Lina [LinaLinii] Shishkova
+Sorokina [liliururu] LiliyaLina [LinaLinii] Shishkova
