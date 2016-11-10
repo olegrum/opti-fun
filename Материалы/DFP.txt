@@ -3,6 +3,7 @@
 Здесь находятся ссылки с полезной инфой, а также ссылка на книгу, которую нам советовал Денис Васильевич!
 http://www.intuit.ru/studies/courses/1020/188/lecture/4933?page=2 - статья с теорией
 http://nsft.narod.ru/Programming/dfp.html - пример кода на Паскале
+http://www.ami.nstu.ru/~headrd/seminar/publik_html/MO_conspect.pdf
 
 Пожалуйста, давайте не забывать, что такое матрица Гессе (она же Гессиан). 
 Повторяем также метод покоординатного спуска. 
