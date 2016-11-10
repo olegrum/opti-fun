@@ -1,0 +1,5 @@
+http://gruenschloss.org/diag0m2/diag0m2.pdf
+https://users.wpi.edu/~martin/RESEARCH/handbook.tmsnets.pdf
+https://en.wikipedia.org/wiki/Sobol_sequence
+https://statistics.stanford.edu/sites/default/files/EFS%20NSF%20464.pdf
+http://www.netlib.org
