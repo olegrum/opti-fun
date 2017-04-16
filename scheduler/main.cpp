@@ -1,3 +1,12 @@
+/*   INPUT FILE ARGS.TXT:
+*    DIM ACCURACY [A B] K
+*    A00 A01 ... A0DIM
+*    .................
+*    ADIM0 ADIM1 ... ADIMDIM
+*
+*    OR INSTEAD Aii CORRECT F0()
+*/
+
 #include <pthread.h>
 #include <iostream>
 #include <stack>
@@ -8,6 +17,8 @@
 #include <new>
 #include "tms.h"
 #include "powell.h"
+#include "SCmathlib.h"
+#include "dfp.h"
 
 #define ERROR_CREATE_THREAD   -11
 #define ERROR_JOIN_THREAD     -12
@@ -15,6 +26,7 @@
 #define ERROR                  -1
 #define SLEEP                   10
 #define WAIT_TIME               1
+#define EPSLN                   1
 
 #if _WIN64 || _WIN32                            // CHECKING NUMBER OF CORES
 #include <windows.h>
@@ -48,9 +60,8 @@ static globe glb;
 
 typedef class Mine_str{                        // STRUCTER FOR EACH POINT FROM TMS-NETS
     public:
-    double *xn;                                  // COORDINATES OF POINT
-    int var;                                    // THREAD NUMBER , WHICH IS EXECUTING METHOD IN THIS POINT
-    double inf;                                  // MINIMUM IN THIS POINT
+    double *xn,inf;                                  // COORDINATES OF POINT , MINIMUM IN THIS POINT
+    int var,iter;                                    // THREAD NUMBER , WHICH IS EXECUTING METHOD IN THIS POINT
     Mine_str()
     {
         try{
@@ -80,10 +91,32 @@ double f0(double* x) {                           // TARGET FUNCTION
         {
             sum+=glb.matr[i][j]*x[i-1]*x[j-1];
         }*/
+    //#1
     //sum=x[2]*x[2]+x[0]*x[0]+(x[0]-1)*(x[0]-1)+(1-x[1])*(1-x[1]);
-    //sum=2*x[0]*x[0]+x[1]*x[1]+x[0]*x[1];
-    sum=100*(x[1]-x[0]*x[0]*x[0])*(x[1]-x[0]*x[0]*x[0])+(1-x[0])*(1-x[0]);
+
+    //#2
+    sum=2*x[0]*x[0]+x[1]*x[1]+x[0]*x[1];
+
     return sum;
+}
+
+double E1(Vector &x){
+    double x1[glb.dim];
+    for(int j=0;j<glb.dim;j++) x1[j]=x(j);
+    double val=f0((double*)x1);
+    return val;
+}
+
+void dE1(Vector &x, Vector &g){
+    //#1
+    //g(0)=2*x(0)+2*(x(0)-1);
+    //g(1)=-2*(1-x(1));
+    //g(2)=2*x(2);
+
+    //#2
+    g(0)=4*x(0)+x(1);
+    g(1)=4*x(1)+x(0);
+
 }
 
 void* DFP(void* args) {                                                     // METHOD DFP
@@ -96,11 +129,11 @@ void* DFP(void* args) {                                                     // M
       printf("Thread pthread_setcanceltype failed (DFP)");
       exit(EXIT_FAILURE);
      }
-   /* srand(time(0));
-    double rnd=(rand()%SLEEP);
-    sleep(rnd*2);*/
 
     mine_t* arg=(mine_t*) args;
+    Vector tmp(glb.dim);
+    for(int j=0;j<glb.dim;j++) tmp(j)=arg->xn[j];
+    dfpmin(tmp, glb.dim, glb.accur, &arg->iter, &arg->inf, E1, dE1);
     pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
 
     pthread_mutex_lock(&glb.mut);
@@ -126,12 +159,7 @@ void* Paul(void* args) {                                                    // M
       exit(EXIT_FAILURE);
      }
 
-   /* srand(time(0));
-    double rnd=(rand()%SLEEP);
-    sleep(rnd*2);*/
-
     mine_t* arg=(mine_t*) args;
-
     //arg->inf=powell(arg->xn,glb.dim+1,glb.accur,&f0);
     pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
 
@@ -180,6 +208,14 @@ void create_thr(int* num_fun, mine_t* fun, int* cnt, pthread_t thr[]){      // C
 
     }
 }                                                                           // END CREATING THREAD
+
+double dist(double* x,double* y){
+    double sum=0;
+    int i;
+    for(i=0; i<glb.dim; i++)
+            sum+=(x[i]-y[i])*(x[i]-y[i]);
+    return sqrt(sum);
+}
 
 int main()  {
 
@@ -260,7 +296,7 @@ int main()  {
             }else{
                 stime.tv_sec = time(NULL) + WAIT_TIME;                                          // ALLOWED TIME FOR WAITING
                 if ( pthread_cond_timedwait (&glb.stack_cond,&glb.mut,&stime) == ETIMEDOUT ) {          // MAIN IS WAITING COMPLETED THREADS
-                    cout<<"Hello"<<endl;
+                    cout<<"All_threads_are_suspended"<<endl;
                     for ( i=1; i<=NUM-1; i++) {
                         pthread_cancel(thr[i]);                                                 // ELSE CANCEL ALL THREADS
                     }
@@ -278,7 +314,37 @@ int main()  {
             num_fun=(iD==k ? (iP==k ? 2 : 1) : (iP==k ? 0 : num_fun) );
     }
 
+    double min_P=std::numeric_limits<double>::infinity(),min_D=std::numeric_limits<double>::infinity(),dst;
+    int ind1,ind2,loc_min_P[k+1]={0},loc_min_D[k+1]={0};
+    bool bl0,bl;
 
+    for(i=0; i<k; i++){
+        for(j=i+1; j<k; j++){
+            dst=dist(point_D[i].xn,point_D[j].xn);
+            bl=(dst<EPSLN); bl0=(loc_min_D[i]!=-1);
+            ind1= bl0 ? ( bl ? (point_D[i].inf<point_D[j].inf ? i : j) : i ) : k+1 ;
+            ind2= bl0 ? ( bl ? (ind1==i ? j : i) : k+1 ) : k+1 ;
+            loc_min_D[ind1]=1;
+            loc_min_D[ind2]=-1;
+
+            dst=dist(point_P[i].xn,point_P[j].xn);
+            bl=(dst<EPSLN); bl0=(loc_min_P[i]!=-1);
+            ind1= bl0 ? ( bl ? (point_P[i].inf<point_P[j].inf ? i : j) : i ) : k+1 ;
+            ind2= bl0 ? ( bl ? (ind1==i ? j : i) : k+1 ) : k+1 ;
+            loc_min_P[ind1]=1;
+            loc_min_P[ind2]=-1;
+        }
+        min_D=(point_D[i].inf<min_D) ? point_D[i].inf : min_D;
+        min_P=(point_P[i].inf<min_P) ? point_P[i].inf : min_P;
+    }
+
+    for(i=0; i<k; i++){
+        bl=(point_D[i].inf==min_D)&(loc_min_D[i]==1);
+        loc_min_D[i]=bl ? 2 : loc_min_D[i];
+
+        bl=(point_P[i].inf==min_P)&(loc_min_P[i]==1);
+        loc_min_P[i]=bl ? 2 : loc_min_P[i];
+    }
     /***********************************************************************************************/
 
 
@@ -296,6 +362,36 @@ int main()  {
     if ( pthread_mutex_destroy (&glb.mut) !=0 ){
         printf(" pthread_mutex_destroy failed");
         exit(EXIT_FAILURE);
+    }
+
+    string tmp;
+    cout<<"DFP minimum:"<<endl;
+    for(j=2; j>0; j--){
+        ind1=1;
+        for(i=0; i<k; i++){
+            if (loc_min_D[i]==j) {
+                tmp=(j==2) ? "Global" : "Local";
+                cout<<tmp<<" minimum # "<<ind1<<" f0 = "<<point_D[i].inf<<"      x = ( ";
+                for(ind2=0; ind2<glb.dim; ind2++) cout<<point_D[i].xn[ind2]<<"  ";
+                cout<<" )"<<endl;
+                ind1+=1;
+            }
+        }
+    }
+    cout<<endl;
+
+    cout<<"Powell minimum:"<<endl;
+    for(j=2; j>0; j--){
+        ind1=1;
+        for(i=0; i<k; i++){
+            if (loc_min_P[i]==j) {
+                tmp=(j==2) ? "Global" : "Local";
+                cout<<tmp<<" minimum # "<<ind1<<" f0 = "<<point_P[i].inf<<"      x = ( ";
+                for(ind2=0; ind2<glb.dim; ind2++) cout<<point_P[i].xn[ind2]<<"  ";
+                cout<<" )"<<endl;
+                ind1+=1;
+            }
+        }
     }
     /***********************************************************************************************/
 
