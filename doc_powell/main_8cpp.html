@@ -1,0 +1,682 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>метод Пауэлла: Файл D:/pawell/main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">метод Пауэлла
+   &#160;<span id="projectnumber">v1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.12 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('main_8cpp.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Макросы</a> &#124;
+<a href="#typedef-members">Определения типов</a> &#124;
+<a href="#func-members">Функции</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл main.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;tuple&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &quot;<a class="el" href="nrutil_8h_source.html">nrutil.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Макросы</h2></td></tr>
+<tr class="memitem:acf1c38f71f39386356edb151a131ad11"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#acf1c38f71f39386356edb151a131ad11">TINY</a>&#160;&#160;&#160;1.0e-25</td></tr>
+<tr class="separator:acf1c38f71f39386356edb151a131ad11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3641b6d4c21b7a852dbb32c2b693302e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3641b6d4c21b7a852dbb32c2b693302e">ITMAX</a>&#160;&#160;&#160;200</td></tr>
+<tr class="separator:a3641b6d4c21b7a852dbb32c2b693302e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a156b862ebf6d213f5da19b9e3ccb779e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a156b862ebf6d213f5da19b9e3ccb779e">TOL</a>&#160;&#160;&#160;2.0e-4</td></tr>
+<tr class="separator:a156b862ebf6d213f5da19b9e3ccb779e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af468028083c9e52aa2c94ef3b9940450"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af468028083c9e52aa2c94ef3b9940450">GOLD</a>&#160;&#160;&#160;1.618034</td></tr>
+<tr class="separator:af468028083c9e52aa2c94ef3b9940450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab08072801a249ee2058194bb698c85a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab08072801a249ee2058194bb698c85a3">GLIMIT</a>&#160;&#160;&#160;100.0</td></tr>
+<tr class="separator:ab08072801a249ee2058194bb698c85a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a199afb41152cc9a1c32d60f129a40ea5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a199afb41152cc9a1c32d60f129a40ea5">SHFT</a>(a,  b,  c,  d)&#160;&#160;&#160;(a)=(b);(b)=(c);(c)=(d);</td></tr>
+<tr class="separator:a199afb41152cc9a1c32d60f129a40ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a985ff4ce447bced94342e89ab3766fdd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a985ff4ce447bced94342e89ab3766fdd">FMAX</a>(a,  b)&#160;&#160;&#160;(a&gt;b)?a:b</td></tr>
+<tr class="separator:a985ff4ce447bced94342e89ab3766fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84b6d4f75b738c61f98e4d28db6a8ad3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a84b6d4f75b738c61f98e4d28db6a8ad3">CGOLD</a>&#160;&#160;&#160;0.3819660</td></tr>
+<tr class="separator:a84b6d4f75b738c61f98e4d28db6a8ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad41630f833e920c1ffa34722f45a8e77"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad41630f833e920c1ffa34722f45a8e77">SQR</a>(a)&#160;&#160;&#160;a*a</td></tr>
+<tr class="separator:ad41630f833e920c1ffa34722f45a8e77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac89d5f8a358eb8a1abdcd0fcef134f1a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac89d5f8a358eb8a1abdcd0fcef134f1a">SIGN</a>(a,  b)&#160;&#160;&#160;(b&gt;0)?abs(a):(-abs(a))</td></tr>
+<tr class="separator:ac89d5f8a358eb8a1abdcd0fcef134f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1480be118a74bd98a735eecc3ee0e833"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1480be118a74bd98a735eecc3ee0e833">ZEPS</a>&#160;&#160;&#160;1.0e-10</td></tr>
+<tr class="separator:a1480be118a74bd98a735eecc3ee0e833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Определения типов</h2></td></tr>
+<tr class="memitem:a743efa95f39b87103beef1cf6bef9763"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="nrutil_8h.html#a6898c4326d3dbd8ba593c91b6a00ac31">std::vector</a>&lt; tuple&lt; double *, int, double, function&lt; double(double *)&gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a743efa95f39b87103beef1cf6bef9763">funcTupleList</a></td></tr>
+<tr class="separator:a743efa95f39b87103beef1cf6bef9763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a4fd8796511d2de86aee49722d758b5b6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4fd8796511d2de86aee49722d758b5b6">brent</a> (double ax, double bx, double cx, double(*f)(double), double tol, double *xmin)</td></tr>
+<tr class="memdesc:a4fd8796511d2de86aee49722d758b5b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Алгоритм BRE.  <a href="#a4fd8796511d2de86aee49722d758b5b6">Подробнее...</a><br /></td></tr>
+<tr class="separator:a4fd8796511d2de86aee49722d758b5b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a398a7eff9881bcff41a4403900d7c7a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a398a7eff9881bcff41a4403900d7c7a0">mnbrak</a> (double *ax, double *bx, double *cx, double *fa, double *fb, double *fc, double(*<a class="el" href="main_8cpp.html#a1f33ec0c582389ac212cdd33637c4291">f1dim</a>)(double))</td></tr>
+<tr class="memdesc:a398a7eff9881bcff41a4403900d7c7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Алгоритм поиска направления спуска  <a href="#a398a7eff9881bcff41a4403900d7c7a0">Подробнее...</a><br /></td></tr>
+<tr class="separator:a398a7eff9881bcff41a4403900d7c7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42168429a6141bd176717acf9102edd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a42168429a6141bd176717acf9102edd5">linmin</a> (double p[], double xi[], int n, double *fret, function&lt; double(double *)&gt; func)</td></tr>
+<tr class="separator:a42168429a6141bd176717acf9102edd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f33ec0c582389ac212cdd33637c4291"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1f33ec0c582389ac212cdd33637c4291">f1dim</a> (double x)</td></tr>
+<tr class="separator:a1f33ec0c582389ac212cdd33637c4291"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57e3d8fa945bbf0eef00a5105b5dd0fa"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a57e3d8fa945bbf0eef00a5105b5dd0fa">powell</a> (double *p, const int n, double ftol, function&lt; double(double *)&gt; func)</td></tr>
+<tr class="separator:a57e3d8fa945bbf0eef00a5105b5dd0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:a30236c67e1f0e59ef05fe357a8bbf6f0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a30236c67e1f0e59ef05fe357a8bbf6f0">ncom</a></td></tr>
+<tr class="separator:a30236c67e1f0e59ef05fe357a8bbf6f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6adf1a211f2beec65e6cb064dab39157"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6adf1a211f2beec65e6cb064dab39157">pcom</a></td></tr>
+<tr class="separator:a6adf1a211f2beec65e6cb064dab39157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a339c026f0fd0ca6f227cd8ba1afb99f4"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a339c026f0fd0ca6f227cd8ba1afb99f4">xicom</a></td></tr>
+<tr class="separator:a339c026f0fd0ca6f227cd8ba1afb99f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03859a47069a105381952ca974361296"><td class="memItemLeft" align="right" valign="top">function&lt; double(double *)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a03859a47069a105381952ca974361296">nrfunc</a></td></tr>
+<tr class="separator:a03859a47069a105381952ca974361296"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Макросы</h2>
+<a id="a84b6d4f75b738c61f98e4d28db6a8ad3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84b6d4f75b738c61f98e4d28db6a8ad3">&sect;&nbsp;</a></span>CGOLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CGOLD&#160;&#160;&#160;0.3819660</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a985ff4ce447bced94342e89ab3766fdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a985ff4ce447bced94342e89ab3766fdd">&sect;&nbsp;</a></span>FMAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FMAX</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(a&gt;b)?a:b</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab08072801a249ee2058194bb698c85a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab08072801a249ee2058194bb698c85a3">&sect;&nbsp;</a></span>GLIMIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GLIMIT&#160;&#160;&#160;100.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af468028083c9e52aa2c94ef3b9940450"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af468028083c9e52aa2c94ef3b9940450">&sect;&nbsp;</a></span>GOLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GOLD&#160;&#160;&#160;1.618034</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3641b6d4c21b7a852dbb32c2b693302e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3641b6d4c21b7a852dbb32c2b693302e">&sect;&nbsp;</a></span>ITMAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ITMAX&#160;&#160;&#160;200</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a199afb41152cc9a1c32d60f129a40ea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a199afb41152cc9a1c32d60f129a40ea5">&sect;&nbsp;</a></span>SHFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHFT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">c, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">d&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(a)=(b);(b)=(c);(c)=(d);</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac89d5f8a358eb8a1abdcd0fcef134f1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac89d5f8a358eb8a1abdcd0fcef134f1a">&sect;&nbsp;</a></span>SIGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SIGN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(b&gt;0)?abs(a):(-abs(a))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad41630f833e920c1ffa34722f45a8e77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad41630f833e920c1ffa34722f45a8e77">&sect;&nbsp;</a></span>SQR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SQR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a</td><td>)</td>
+          <td>&#160;&#160;&#160;a*a</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf1c38f71f39386356edb151a131ad11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf1c38f71f39386356edb151a131ad11">&sect;&nbsp;</a></span>TINY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TINY&#160;&#160;&#160;1.0e-25</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a156b862ebf6d213f5da19b9e3ccb779e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a156b862ebf6d213f5da19b9e3ccb779e">&sect;&nbsp;</a></span>TOL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TOL&#160;&#160;&#160;2.0e-4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1480be118a74bd98a735eecc3ee0e833"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1480be118a74bd98a735eecc3ee0e833">&sect;&nbsp;</a></span>ZEPS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZEPS&#160;&#160;&#160;1.0e-10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Типы</h2>
+<a id="a743efa95f39b87103beef1cf6bef9763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a743efa95f39b87103beef1cf6bef9763">&sect;&nbsp;</a></span>funcTupleList</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="nrutil_8h.html#a6898c4326d3dbd8ba593c91b6a00ac31">std::vector</a>&lt;tuple&lt;double*, int, double, function&lt;double(double*)&gt; &gt; &gt; <a class="el" href="main_8cpp.html#a743efa95f39b87103beef1cf6bef9763">funcTupleList</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Функции</h2>
+<a id="a4fd8796511d2de86aee49722d758b5b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fd8796511d2de86aee49722d758b5b6">&sect;&nbsp;</a></span>brent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double brent </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>cx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double(*)(double)&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>xmin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Алгоритм BRE. </p>
+<p>Алгоритм Брента (Brent) или методы последовательного перебора Брента, - это алгоритм одномерного поиска, который является комбинацией метода золотого сечения и квадратичной интерполяции. </p>
+
+</div>
+</div>
+<a id="a1f33ec0c582389ac212cdd33637c4291"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f33ec0c582389ac212cdd33637c4291">&sect;&nbsp;</a></span>f1dim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double f1dim </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a42168429a6141bd176717acf9102edd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42168429a6141bd176717acf9102edd5">&sect;&nbsp;</a></span>linmin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void linmin </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>xi</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>fret</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">function&lt; double(double *)&gt;&#160;</td>
+          <td class="paramname"><em>func</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a398a7eff9881bcff41a4403900d7c7a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a398a7eff9881bcff41a4403900d7c7a0">&sect;&nbsp;</a></span>mnbrak()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mnbrak </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>ax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>cx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>fa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>fb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>fc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double(*)(double)&#160;</td>
+          <td class="paramname"><em>f1dim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Алгоритм поиска направления спуска </p>
+<p>mnbrak ищет направление спуска (определяется функцией, заданной начальными точками ) и возвращает новые точки ax, bx, cx, которые фиксируют минимум функции. Также возвращаются функции со значениями в этих трех точках: fa, fb и fc. </p>
+
+</div>
+</div>
+<a id="a57e3d8fa945bbf0eef00a5105b5dd0fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57e3d8fa945bbf0eef00a5105b5dd0fa">&sect;&nbsp;</a></span>powell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double powell </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ftol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">function&lt; double(double *)&gt;&#160;</td>
+          <td class="paramname"><em>func</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a id="a30236c67e1f0e59ef05fe357a8bbf6f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30236c67e1f0e59ef05fe357a8bbf6f0">&sect;&nbsp;</a></span>ncom</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ncom</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a03859a47069a105381952ca974361296"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03859a47069a105381952ca974361296">&sect;&nbsp;</a></span>nrfunc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">function&lt; double(double *)&gt; nrfunc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6adf1a211f2beec65e6cb064dab39157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6adf1a211f2beec65e6cb064dab39157">&sect;&nbsp;</a></span>pcom</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double * pcom</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a339c026f0fd0ca6f227cd8ba1afb99f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a339c026f0fd0ca6f227cd8ba1afb99f4">&sect;&nbsp;</a></span>xicom</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double * xicom</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e242d6cf9a21d207607a6f77902c7d0e.html">pawell</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
+    <li class="footer">Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.12 </li>
+  </ul>
+</div>
+</body>
+</html>
