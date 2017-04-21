@@ -1,0 +1,55 @@
+﻿  ConsoleApplication3.cpp
+c:\users\asus\desktop\paww\test powell\consoleapplication3\consoleapplication3.cpp(41): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\asus\desktop\paww\test powell\consoleapplication3\consoleapplication3.cpp(42): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\asus\desktop\paww\test powell\consoleapplication3\consoleapplication3.cpp(53): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\asus\desktop\paww\test powell\consoleapplication3\consoleapplication3.cpp(59): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\asus\desktop\paww\test powell\consoleapplication3\consoleapplication3.cpp(71): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\asus\desktop\paww\test powell\consoleapplication3\consoleapplication3.cpp(117): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\asus\desktop\paww\test powell\consoleapplication3\consoleapplication3.cpp(123): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\asus\desktop\paww\test powell\consoleapplication3\consoleapplication3.cpp(124): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\asus\desktop\paww\test powell\consoleapplication3\consoleapplication3.cpp(142): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\asus\desktop\paww\test powell\consoleapplication3\consoleapplication3.cpp(149): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\asus\desktop\paww\test powell\consoleapplication3\consoleapplication3.cpp(190): warning C4305: аргумент: усечение из "double" к "float"
+c:\users\asus\desktop\paww\test powell\consoleapplication3\consoleapplication3.cpp(243): warning C4305: инициализация: усечение из "double" к "float"
+c:\users\asus\desktop\paww\test powell\consoleapplication3\consoleapplication3.cpp(312): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\asus\desktop\paww\test powell\consoleapplication3\consoleapplication3.cpp(260): warning C4101: t: неиспользованная локальная переменная
+c:\users\asus\desktop\paww\test powell\consoleapplication3\consoleapplication3.cpp(370): warning C4305: инициализация: усечение из "double" к "float"
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\tuple(164): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\tuple(341): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::_Tuple_val<_This>::_Tuple_val<_Ty>(_Other &&)"
+          with
+          [
+              _This=float,
+              _Ty=int,
+              _Other=int
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\tuple(340): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::_Tuple_val<_This>::_Tuple_val<_Ty>(_Other &&)"
+          with
+          [
+              _This=float,
+              _Ty=int,
+              _Other=int
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\tuple(341): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::tuple<float,std::function<float (float *)>>::tuple<std::_Unpack_tuple_t,int,main::<lambda_4e50f188d1ec5348e5320f692799c7ae>,0>(_Tag,std::tuple<int,main::<lambda_4e50f188d1ec5348e5320f692799c7ae>> &&)"
+          with
+          [
+              _Tag=std::_Unpack_tuple_t
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\tuple(339): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::tuple<float,std::function<float (float *)>>::tuple<std::_Unpack_tuple_t,int,main::<lambda_4e50f188d1ec5348e5320f692799c7ae>,0>(_Tag,std::tuple<int,main::<lambda_4e50f188d1ec5348e5320f692799c7ae>> &&)"
+          with
+          [
+              _Tag=std::_Unpack_tuple_t
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\tuple(520): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::tuple<int,float,std::function<float (float *)>>::tuple<std::_Unpack_tuple_t,int,int,main::<lambda_4e50f188d1ec5348e5320f692799c7ae>,0>(_Tag,std::tuple<int,int,main::<lambda_4e50f188d1ec5348e5320f692799c7ae>> &&)"
+          with
+          [
+              _Tag=std::_Unpack_tuple_t
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\tuple(518): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::tuple<int,float,std::function<float (float *)>>::tuple<std::_Unpack_tuple_t,int,int,main::<lambda_4e50f188d1ec5348e5320f692799c7ae>,0>(_Tag,std::tuple<int,int,main::<lambda_4e50f188d1ec5348e5320f692799c7ae>> &&)"
+          with
+          [
+              _Tag=std::_Unpack_tuple_t
+          ]
+  c:\users\asus\desktop\paww\test powell\consoleapplication3\consoleapplication3.cpp(396): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::tuple<float *,int,float,std::function<float (float *)>>::tuple<float*,int,int,main::<lambda_4e50f188d1ec5348e5320f692799c7ae>,0,0>(std::tuple<float *,int,int,main::<lambda_4e50f188d1ec5348e5320f692799c7ae>> &&)"
+  c:\users\asus\desktop\paww\test powell\consoleapplication3\consoleapplication3.cpp(372): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::tuple<float *,int,float,std::function<float (float *)>>::tuple<float*,int,int,main::<lambda_4e50f188d1ec5348e5320f692799c7ae>,0,0>(std::tuple<float *,int,int,main::<lambda_4e50f188d1ec5348e5320f692799c7ae>> &&)"
+  ConsoleApplication3.vcxproj -> C:\Users\Asus\Desktop\paww\test powell\Debug\ConsoleApplication3.exe
+  ConsoleApplication3.vcxproj -> C:\Users\Asus\Desktop\paww\test powell\Debug\ConsoleApplication3.pdb (Full PDB)
