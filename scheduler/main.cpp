@@ -15,7 +15,9 @@
 #include <time.h>
 #include <limits>
 #include <new>
-#include "tms.h"
+#include <vector>
+//#include "tms.h"
+#include "tms2.h"
 #include "powell.h"
 #include "SCmathlib.h"
 #include "dfp.h"
@@ -46,7 +48,7 @@ int NUM(){
 
 using namespace std;
 
-
+//vector < vector <double> > vResult;
 class globe{
     public:
     double** matr;
@@ -57,6 +59,8 @@ class globe{
     double accur;                       // OPTIONS OF FUNCTION AND ACCURACY
 };
 static globe glb;
+
+
 
 typedef class Mine_str{                        // STRUCTER FOR EACH POINT FROM TMS-NETS
     public:
@@ -106,6 +110,14 @@ double E1(Vector &x){
     double val=f0((double*)x1);
     return val;
 }
+
+double E2(vector<double> &x){
+    double x1[glb.dim];
+    for(int j=0;j<glb.dim;j++) x1[j]=x[j];
+    double val=f0((double*)x1);
+    return val;
+}
+
 
 void dE1(Vector &x, Vector &g){
     //#1
@@ -220,12 +232,17 @@ double dist(double* x,double* y){
 int main()  {
 
     /***********DATA LOADING********************/
-    int i,j,k;                                                              // k - AMOUNT OF POINTS , WHICH TMS IS SEARCHING
-    double a,b;                                                              // INTERVAL [a,b]
+    int i,j,k,s;                                                         // k - AMOUNT OF POINTS , WHICH TMS IS SEARCHING
 
     ifstream fin("args.txt");
-    fin >> glb.dim >> glb.accur >> a >> b>> k;
-
+    fin >> glb.dim >> glb.accur >> s >>k;
+    vector< vector<double> > bounds(glb.dim);
+    for(i=0;i<glb.dim;i++) {
+            bounds[i].resize(2);
+            for(j=0;j<2;j++){
+                fin >> bounds[i][j] ;
+            }
+    }
     try{
         glb.matr = new double * [glb.dim+1];
         for (i=0; i<=glb.dim; i++)
@@ -248,8 +265,8 @@ int main()  {
 
 
     /***********DATA PROCESSING*****************/
-    double** points=tms(glb.dim, a, b, k, f0);                      //TMS
-
+    //double** points=tms(glb.dim, a, b, k, f0);                      //TMS
+    GENIN2(glb.dim,s,k,&E2,bounds);
     // TMS IS RIGHT HERE
 
     int status,iP=0,iD=0,num_fun=0,status_addr;;                           // iP,iD - INDICES OF POINTS FOR DFP AND POWELL
@@ -260,14 +277,14 @@ int main()  {
     for (i=1; i<=NUM-1; i++) glb.mystack1.push(i);
     for (i=0; i<=k-1; i++) {                                                // CREATING 2 ARRAYS [k,dim] FOR DFP AND POWELL METHODS
         for (j=0; j<=glb.dim-1; j++){
-            point_P[i].xn[j]=points[i][j];
-            point_D[i].xn[j]=points[i][j];
+            point_P[i].xn[j]=vResult[i][j];//points[i][j];
+            point_D[i].xn[j]=vResult[i][j];//points[i][j];
         }
     }
 
-    for (i=0; i<k; i++)
+   /* for (i=0; i<k; i++)
         delete [] points[i];
-    delete [] points;
+    delete [] points;*/
 
     if ( pthread_mutex_init(&glb.mut, NULL) != 0 ){                             // MUTEX INITIALIZATION
         printf(" pthread_mutex_init failed ");
