@@ -5,10 +5,10 @@
 5) пишите git config —global user.email "your_email@youremail.com" со своим emailом
 6) создаёте папку для проекта
 7) с помощью Жукова и cd перемещаетесь туда в git bash
-8)git init
-9)git remote add origin https://github.com/olegrum/opti-fun.git
-10)git pull origin master
-11)изменяете файл
-12)git add README.md
-13)git commit -m “ваш комментарий.”
-14)git push
+8) git init
+9) git remote add origin https://github.com/olegrum/opti-fun.git
+10) git pull origin master
+11) изменяете файл
+12) git add README.md
+13) git commit -m “ваш комментарий.”
+14) git push
